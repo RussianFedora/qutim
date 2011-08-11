@@ -28,7 +28,7 @@ ICQ, Jabber, GTalk, Ya.Online, LiveJournal.com, Mail.Ru, IRC клиент
 
 
 %build
-%{cmake} . -DCMAKE_INSTALL_PREFIX=$RPM_BUILD_ROOT
+%{cmake} .
 make %{?_smp_mflags}
 
 %install
