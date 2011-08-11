@@ -1,5 +1,5 @@
 %global gitdate 20110811
-%global gitcommit 6f9eed4
+%global gitcommit 471dc65
 #git rev-parse --short HEAD
 
 Name:           qutim
@@ -10,7 +10,8 @@ Summary(ru):    Мультиплатформенный, мультипроток
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        %{name}-%{version}-git%{gitdate}.tar.xz
+Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
+Patch1:         %{name}-rpath.patch
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel         
@@ -29,6 +30,7 @@ ICQ, Jabber, GTalk, Ya.Online, LiveJournal.com, Mail.Ru, IRC клиент
 
 %prep
 %setup -q -n qutim
+%patch1 -p1
 
 
 %build
