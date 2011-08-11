@@ -1,12 +1,16 @@
+%global gitdate 20110811
+%global gitcommit 6f9eed4
+#git rev-parse --short HEAD
+
 Name:           qutim
 Version:        0.3
-Release:        git20110811.1%{?dist}.R
+Release:        1.%{gitdate}git%{gitcommit}%{?dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        %{name}-%{version}-git20110811.tar.xz
+Source0:        %{name}-%{version}-git%{gitdate}.tar.xz
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel         
