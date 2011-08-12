@@ -1,5 +1,5 @@
 %global gitdate 20110811
-%global gitcommit 471dc65
+%global gitcommit 5431b1f
 #git rev-parse --short HEAD
 
 Name:           qutim
