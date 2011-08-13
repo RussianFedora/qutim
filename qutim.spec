@@ -14,7 +14,7 @@ Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel         
-BuildRequires:  chrpath
+#BuildRequires:  chrpath
 #BuildRequires:  aspell-devel, libpurple-devel
 
 %description
@@ -28,6 +28,13 @@ ICQ, Jabber, GTalk, Ya.Online, LiveJournal.com, Mail.Ru, IRC клиент
 обмена сообщениями для Linux и Windows.
 Написан с нуля и призван быть лёгким, простым, быстрым, красивым и
 расширяемым за счёт модулей-плагинов.
+
+%package        devel
+Summary:        Development files for qutIM
+
+%description    devel
+Development files for qutIM
+
 
 %prep
 %setup -q -n qutim
@@ -53,9 +60,22 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_libdir}/libqutim.so.0
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/%{name}
+%{_datadir}/icons/hicolor/*x*/apps/%{name}.png
+%{_datadir}/icons/hicolor/*x*/places/user-identity.png
+%{_datadir}/icons/hicolor/scalable/apps/qutim.svg
+%{_datadir}/icons/oxygen/scalable/status/mail-message-new-qutim.svg
+%{_datadir}/icons/oxygen/scalable/status/qutim-offline.svg
+%{_datadir}/icons/oxygen/scalable/status/qutim-online.svg
+%{_datadir}/icons/ubuntu-mono-dark/scalable/status/mail-message-new-qutim.svg
+%{_datadir}/icons/ubuntu-mono-dark/scalable/status/qutim-offline.svg
+%{_datadir}/icons/ubuntu-mono-dark/scalable/status/qutim-online.svg
+%{_datadir}/icons/ubuntu-mono-light/scalable/status/mail-message-new-qutim.svg
+%{_datadir}/icons/ubuntu-mono-light/scalable/status/qutim-offline.svg
+%{_datadir}/icons/ubuntu-mono-light/scalable/status/qutim-online.svg
+%{_datadir}/pixmaps/qutim.xpm
+%{_datadir}/qutim/config/profile.json
 
-
-%doc
+%doc %{_datadir}/%{name}
 
 %files devel
 %{_includedir}/jreen
