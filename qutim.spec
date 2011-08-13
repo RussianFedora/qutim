@@ -13,9 +13,8 @@ URL:            http://www.qutim.org/
 Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
-BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel         
-#BuildRequires:  chrpath
-#BuildRequires:  aspell-devel, libpurple-devel
+BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
+BuildRequires:  aspell-devel, libpurple-devel
 
 %description
 qutIM - free open-source multiprotocol ( ICQ, Jabber/GTalk/
@@ -35,6 +34,12 @@ Summary:        Development files for qutIM
 %description    devel
 Development files for qutIM
 
+%package        doc
+Summary:        Documentation files for qutIM
+
+%description    doc
+Documentation files for qutIM
+
 
 %prep
 %setup -q -n qutim
@@ -52,30 +57,25 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files
 %{_bindir}/%{name}
 %{_libdir}/%{name}
-%{_libdir}/libjreen.so.0.1.0     
+%{_libdir}/libjreen.so.0.1.0
 %{_libdir}/libqutim.so.0.2.80.0
-%{_libdir}/libjreen.so           
+%{_libdir}/libjreen.so
 %{_libdir}/libqutim.so
-%{_libdir}/libjreen.so.0         
+%{_libdir}/libjreen.so.0
 %{_libdir}/libqutim.so.0
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/%{name}
 %{_datadir}/icons/hicolor/*x*/apps/%{name}.png
 %{_datadir}/icons/hicolor/*x*/places/user-identity.png
-%{_datadir}/icons/hicolor/scalable/apps/qutim.svg
-%{_datadir}/icons/oxygen/scalable/status/mail-message-new-qutim.svg
-%{_datadir}/icons/oxygen/scalable/status/qutim-offline.svg
-%{_datadir}/icons/oxygen/scalable/status/qutim-online.svg
-%{_datadir}/icons/ubuntu-mono-dark/scalable/status/mail-message-new-qutim.svg
-%{_datadir}/icons/ubuntu-mono-dark/scalable/status/qutim-offline.svg
-%{_datadir}/icons/ubuntu-mono-dark/scalable/status/qutim-online.svg
-%{_datadir}/icons/ubuntu-mono-light/scalable/status/mail-message-new-qutim.svg
-%{_datadir}/icons/ubuntu-mono-light/scalable/status/qutim-offline.svg
-%{_datadir}/icons/ubuntu-mono-light/scalable/status/qutim-online.svg
-%{_datadir}/pixmaps/qutim.xpm
-%{_datadir}/qutim/config/profile.json
+%{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_datadir}/icons/oxygen/scalable/status/*%{name}*.svg
+%{_datadir}/icons/ubuntu-mono-dark/scalable/status/*%{name}*.svg
+%{_datadir}/icons/ubuntu-mono-light/scalable/status/*%{name}*.svg
+%{_datadir}/pixmaps/%{name}.xpm
+%{_datadir}/%{name}/config/profile.json
 
-%doc %{_datadir}/%{name}
+%files doc
+%doc %{_datadir}/%{name}/doc
 
 %files devel
 %{_includedir}/jreen
@@ -83,3 +83,5 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 
 %changelog
+* Fri Aug 12 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.2-1.20110811git5431b1f.R
+- Initial release
