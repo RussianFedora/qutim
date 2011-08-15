@@ -1,5 +1,5 @@
-%global gitdate 20110811
-%global gitcommit 5431b1f
+%global gitdate 20110815
+%global gitcommit 18f571a
 #git rev-parse --short HEAD
 
 Name:           qutim
@@ -83,5 +83,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 
 %changelog
-* Fri Aug 12 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.2-1.20110811git5431b1f.R
+* Mon Aug 15 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.20110815git18f571a.R
+- Update from git
+
+* Fri Aug 12 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.20110811git5431b1f.R
 - Initial release
