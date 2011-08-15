@@ -14,7 +14,7 @@ Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
-BuildRequires:  aspell-devel, libpurple-devel
+BuildRequires:  aspell-devel, libpurple-devel, doxygen
 
 %description
 qutIM - free open-source multiprotocol ( ICQ, Jabber/GTalk/
