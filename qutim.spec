@@ -4,7 +4,7 @@
 
 Name:           qutim
 Version:        0.3
-Release:        1.%{gitdate}git%{gitcommit}%{?dist}.R
+Release:        2.%{gitdate}git%{gitcommit}%{?dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
@@ -15,6 +15,8 @@ Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
 BuildRequires:  aspell-devel, libpurple-devel, doxygen
+
+Requires:       qca-cyrus-sasl
 
 
 %description
@@ -87,6 +89,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 
 %changelog
+* Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-2.20110815git18f571a.R
+- Added requires qca-cyrus-sasl
+
 * Mon Aug 15 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.20110815git18f571a.R
 - Update from git
 
