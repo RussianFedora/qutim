@@ -1,16 +1,16 @@
-%global gitdate 20110815
-%global gitcommit 18f571a
-#git rev-parse --short HEAD
+%global date 20110923
+%global gitcommit a4487a5
+%global realver 0.3
 
 Name:           qutim
-Version:        0.3
-Release:        2.%{gitdate}git%{gitcommit}%{?dist}.R
+Version:        %{realver}.%{date}git%{gitcommit}
+Release:        1%{dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        %{name}-%{version}-git%{gitcommit}.tar.xz
+Source0:        %{name}-%{realver}.git.tar.xz
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
@@ -38,13 +38,14 @@ Development files for qutIM
 
 %package        doc
 Summary:        Documentation files for qutIM
+BuildArch:      noarch
 
 %description    doc
 Documentation files for qutIM
 
 
 %prep
-%setup -q -n qutim
+%setup -q -n %{name}-%{realver}.git
 
 
 %build
@@ -85,6 +86,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 
 %changelog
+* Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-2.20110923gita4487a5.R
+- Update to last revision
+
 * Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-2.20110815git18f571a.R
 - Added requires qca-cyrus-sasl
 

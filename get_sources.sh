@@ -1,23 +1,14 @@
 #!/bin/bash
 
-if [ -e "qutim" ]
-then
-    cd qutim
-    git pull
-    git submodule update --init --recursive
-else
-    git clone git://github.com/euroelessar/qutim.git
-    cd qutim
-fi
+ORIGNAME=qutim
+VERSION=0.3
+GIT_REVISION=a4487a5ae6
+NAME=${ORIGNAME}-${VERSION}.git
 
+rm -rf ${ORIGNAME}
+git clone git://github.com/euroelessar/qutim.git &>/dev/null
 git submodule update --init --recursive
-GITCOMMIT=`git rev-parse --short HEAD`
-echo $GITCOMMIT
-cd ..
+mv ${ORIGNAME} ${NAME}
 
-if [ -e qutim-0.3-git$GITCOMMIT.tar.xz ]
-then
-    echo "Sources already exist"
-else
-    tar c qutim | xz --best > qutim-0.3-git$GITCOMMIT.tar.xz
-fi
+tar cfJ ${NAME}.tar.xz ${NAME}
+rm -rf ${NAME}
