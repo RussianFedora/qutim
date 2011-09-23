@@ -18,6 +18,7 @@ BuildRequires:  aspell-devel, libpurple-devel, doxygen
 
 Requires:       qca-cyrus-sasl
 
+
 %description
 qutIM - free open-source multiprotocol ( ICQ, Jabber/GTalk/
 /Ya.Online/LiveJournal.com, Mail.Ru, IRC ) instant messenger for
@@ -58,6 +59,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 #find $RPM_BUILD_ROOT -name "*" -exec chrpath --delete {} \; 2>/dev/null
 
 %files
+%defattr(-,root,root)
 %{_bindir}/%{name}
 %{_libdir}/%{name}
 %{_libdir}/libjreen.so.0.1.0
@@ -78,9 +80,11 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/%{name}/config/profile.json
 
 %files doc
+%defattr(-,root,root)
 %doc %{_datadir}/%{name}/doc
 
 %files devel
+%defattr(-,root,root)
 %{_includedir}/jreen
 %{_includedir}/%{name}
 %{_datadir}/cmake/Modules/*
