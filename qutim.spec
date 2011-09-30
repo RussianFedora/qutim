@@ -1,16 +1,14 @@
-%global date 20110923
 %global gitcommit a4487a5
-%global realver 0.3
 
 Name:           qutim
-Version:        %{realver}.%{date}git%{gitcommit}
-Release:        1%{dist}.R
+Version:        0.3
+Release:        1.git%{gitcommit}%{dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        %{name}-%{realver}.git.tar.xz
+Source0:        https://github.com/euroelessar/%{name}/tarball/%{gitcommit}
 
 BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
 BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
@@ -46,7 +44,7 @@ Documentation files for qutIM
 
 
 %prep
-%setup -q -n %{name}-%{realver}.git
+%setup -q -n euroelessar-%{name}-%{gitcommit}
 
 
 %build
@@ -90,7 +88,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 
 %changelog
-* Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-2.20110923gita4487a5.R
+* Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gita4487a5.R
 - Update to last revision
 
 * Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-2.20110815git18f571a.R
