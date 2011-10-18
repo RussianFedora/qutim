@@ -113,11 +113,13 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files -n jreen-devel
 %defattr(-,root,root)
 %{_includedir}/jreen
+%{_libdir}/pkgconfig/libjreen.pc
 
 
 %changelog
 * Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gitaa4ae98.R
 - Update to last revision
+- Split package
 
 * Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gita4487a5.R
 - Update to last revision
