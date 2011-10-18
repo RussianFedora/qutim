@@ -1,20 +1,32 @@
-%global gitcommit a4487a5
+%global date 20111018
+%global gitcommit aa4ae98
+%global realver 0.3
 
 Name:           qutim
-Version:        0.3
-Release:        1.git%{gitcommit}%{dist}.R
+Version:        %{realver}.%{date}git%{gitcommit}
+Release:        1%{dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        https://github.com/euroelessar/%{name}/tarball/%{gitcommit}
+Source0:        %{name}-%{realver}.git.tar.xz
 
-BuildRequires:  cmake >= 2.6, desktop-file-utils, qca2-devel
-BuildRequires:  qt-devel >= 1:4.0, libidn-devel, dos2unix, qt-webkit-devel
-BuildRequires:  aspell-devel, libpurple-devel, doxygen
+BuildRoot:      /{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+
+BuildRequires:  cmake
+BuildRequires:  desktop-file-utils
+BuildRequires:  qca2-devel
+BuildRequires:  qt-devel
+BuildRequires:  libidn-devel
+BuildRequires:  dos2unix
+BuildRequires:  qt-webkit-devel
+BuildRequires:  aspell-devel
+BuildRequires:  libpurple-devel
+BuildRequires:  doxygen
 
 Requires:       qca-cyrus-sasl
+Requires:       jreen
 
 
 %description
@@ -42,9 +54,21 @@ BuildArch:      noarch
 %description    doc
 Documentation files for qutIM
 
+%package -n jreen
+Summary:        Jreen library for qutim
+
+%description -n jreen
+Jreen library for qutim
+
+%package -n jreen-devel
+Summary:        Development files for Jreen library for qutim
+
+%description -n jreen-devel
+Development files for Jreen library for qutim
+
 
 %prep
-%setup -q -n euroelessar-%{name}-%{gitcommit}
+%setup -q -n %{name}-%{realver}.git
 
 
 %build
@@ -54,17 +78,13 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
-#find $RPM_BUILD_ROOT -name "*" -exec chrpath --delete {} \; 2>/dev/null
 
 %files
 %defattr(-,root,root)
 %{_bindir}/%{name}
 %{_libdir}/%{name}
-%{_libdir}/libjreen.so.0.1.0
 %{_libdir}/libqutim.so.0.2.80.0
-%{_libdir}/libjreen.so
 %{_libdir}/libqutim.so
-%{_libdir}/libjreen.so.0
 %{_libdir}/libqutim.so.0
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/%{name}
@@ -83,11 +103,22 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 %files devel
 %defattr(-,root,root)
-%{_includedir}/jreen
 %{_includedir}/%{name}
 %{_datadir}/cmake/Modules/*
 
+%files -n jreen
+%defattr(-,root,root)
+%{_libdir}/libjreen.so*
+
+%files -n jreen-devel
+%defattr(-,root,root)
+%{_includedir}/jreen
+
+
 %changelog
+* Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gitaa4ae98.R
+- Update to last revision
+
 * Tue Aug 16 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gita4487a5.R
 - Update to last revision
 
