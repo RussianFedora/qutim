@@ -79,13 +79,19 @@ make %{?_smp_mflags}
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%post -n jreen -p /sbin/ldconfig
+
+%postun -n jreen -p /sbin/ldconfig
+
 %files
 %defattr(-,root,root)
 %{_bindir}/%{name}
 %{_libdir}/%{name}
-%{_libdir}/libqutim.so.0.2.80.0
-%{_libdir}/libqutim.so
-%{_libdir}/libqutim.so.0
+%{_libdir}/libqutim.so.*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/%{name}
 %{_datadir}/icons/hicolor/*x*/apps/%{name}.png
@@ -105,19 +111,21 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_includedir}/%{name}
 %{_datadir}/cmake/Modules/*
+%{_libdir}/libqutim.so
 
 %files -n jreen
 %defattr(-,root,root)
-%{_libdir}/libjreen.so*
+%{_libdir}/libjreen.so.*
 
 %files -n jreen-devel
 %defattr(-,root,root)
 %{_includedir}/jreen
 %{_libdir}/pkgconfig/libjreen.pc
+%{_libdir}/libjreen.so
 
 
 %changelog
-* Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3-1.gitaa4ae98.R
+* Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111018gitaa4ae98-1.R
 - Update to last revision
 - Split package
 
