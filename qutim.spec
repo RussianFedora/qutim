@@ -24,6 +24,12 @@ BuildRequires:  qt-webkit-devel
 BuildRequires:  aspell-devel
 BuildRequires:  libpurple-devel
 BuildRequires:  doxygen
+BuildRequires:  libXScrnSaver-devel
+BuildRequires:  phonon-devel
+BuildRequires:  qt-mobility-devel
+BuildRequires:  telepathy-qt4-devel
+BuildRequires:  SDL_mixer-devel
+BuildRequires:  dbusmenu-qt-devel
 
 Requires:       qca-cyrus-sasl
 Requires:       jreen
@@ -125,8 +131,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111026git7fbd44c-1.R
+* Tue Oct 26 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111026git7fbd44c-1.R
 - Update to last revision
+- Added some buildrequires
 
 * Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111018gitaa4ae98-1.R
 - Update to last revision
