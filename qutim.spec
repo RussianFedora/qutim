@@ -1,5 +1,5 @@
-%global date 20111018
-%global gitcommit aa4ae98
+%global date 20111026
+%global gitcommit 7fbd44c
 %global realver 0.3
 
 Name:           qutim
@@ -125,6 +125,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111026git7fbd44c-1.R
+- Update to last revision
+
 * Tue Oct 18 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111018gitaa4ae98-1.R
 - Update to last revision
 - Split package
