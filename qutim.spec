@@ -1,5 +1,5 @@
-%global date 20111026
-%global gitcommit 7fbd44c
+%global date 20111027
+%global gitcommit b2dfec3
 %global realver 0.3
 
 Name:           qutim
@@ -26,7 +26,6 @@ BuildRequires:  libpurple-devel
 BuildRequires:  doxygen
 BuildRequires:  libXScrnSaver-devel
 BuildRequires:  phonon-devel
-BuildRequires:  qt-mobility-devel
 BuildRequires:  telepathy-qt4-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  dbusmenu-qt-devel
@@ -131,7 +130,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
-* Tue Oct 26 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111026git7fbd44c-1.R
+* Thu Oct 27 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111027gitb2dfec3-1.R
+- Update to last revision
+
+* Wed Oct 26 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111026git7fbd44c-1.R
 - Update to last revision
 - Added some buildrequires
 
