@@ -29,6 +29,7 @@ BuildRequires:  phonon-devel
 BuildRequires:  telepathy-qt4-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  dbusmenu-qt-devel
+BuildRequires:  qt-mobility-devel
 
 Requires:       qca-cyrus-sasl
 Requires:       jreen
