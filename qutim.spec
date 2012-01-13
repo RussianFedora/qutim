@@ -1,5 +1,5 @@
-%global date 20111213
-%global gitcommit f50a28a8d6
+%global date 20120113
+%global gitcommit 6a8a205
 %global realver 0.3
 
 Name:           qutim
@@ -131,6 +131,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jun 13 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
+- Update to last revision
+
 * Thu Dec 13 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111213gitf50a28a-1.R
 - Update to last revision
 
