@@ -97,7 +97,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_bindir}/%{name}
 %{_libdir}/%{name}
-%{_libdir}/libqutim.so.*
+%{_libdir}/libqutim*.so.*
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/apps/%{name}
 %{_datadir}/icons/hicolor/*x*/apps/%{name}.png
@@ -108,6 +108,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/icons/ubuntu-mono-light/scalable/status/*%{name}*.svg
 %{_datadir}/pixmaps/%{name}.xpm
 %{_datadir}/%{name}/config/profile.json
+%{_datadir}/%{name}/config/appearance.json
 
 %files doc
 %defattr(-,root,root)
@@ -117,7 +118,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_includedir}/%{name}
 %{_datadir}/cmake/Modules/*
-%{_libdir}/libqutim.so
+%{_libdir}/libqutim*.so
 
 %files -n jreen
 %defattr(-,root,root)
@@ -129,10 +130,12 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/libjreen.pc
 %{_libdir}/libjreen.so
 
-
 %changelog
+* Thu Jun 18 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
+- Update to last revision.
+- Add new files
 * Thu Jun 13 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
-- Update to last revision
+- Update to last revision.
 
 * Thu Dec 13 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111213gitf50a28a-1.R
 - Update to last revision
