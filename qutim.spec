@@ -11,6 +11,7 @@ Summary(ru):    Мультиплатформенный, мультипроток
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
 Source0:        %{name}-%{realver}.git.tar.xz
+Source100:      README.RFRemix
 
 BuildRoot:      /{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -80,6 +81,7 @@ Development files for Jreen library for qutim
 %build
 %{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON .
 make %{?_smp_mflags}
+cp %{SOURCE100} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -113,6 +115,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files doc
 %defattr(-,root,root)
 %doc %{_datadir}/%{name}/doc
+%doc README.RFRemix
 
 %files devel
 %defattr(-,root,root)
@@ -131,9 +134,13 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_libdir}/libjreen.so
 
 %changelog
+* Wed Jun 18 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-1.R
+- Added README.RFRemix file
+
 * Thu Jun 18 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
 - Update to last revision.
 - Add new files
+
 * Thu Jun 13 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
 - Update to last revision.
 
