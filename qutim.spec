@@ -4,7 +4,7 @@
 
 Name:           qutim
 Version:        %{realver}.%{date}git%{gitcommit}
-Release:        1%{dist}.R
+Release:        2%{dist}.R
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
@@ -31,9 +31,9 @@ BuildRequires:  telepathy-qt4-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  dbusmenu-qt-devel
 BuildRequires:  qt-mobility-devel
+BuildRequires:  jreen-devel
 
 Requires:       qca-cyrus-sasl
-Requires:       jreen
 
 
 %description
@@ -61,25 +61,13 @@ BuildArch:      noarch
 %description    doc
 Documentation files for qutIM
 
-%package -n jreen
-Summary:        Jreen library for qutim
-
-%description -n jreen
-Jreen library for qutim
-
-%package -n jreen-devel
-Summary:        Development files for Jreen library for qutim
-
-%description -n jreen-devel
-Development files for Jreen library for qutim
-
 
 %prep
 %setup -q -n %{name}-%{realver}.git
 
 
 %build
-%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON .
+%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true .
 make %{?_smp_mflags}
 cp %{SOURCE100} .
 
@@ -91,9 +79,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 %postun -p /sbin/ldconfig
 
-%post -n jreen -p /sbin/ldconfig
-
-%postun -n jreen -p /sbin/ldconfig
 
 %files
 %defattr(-,root,root)
@@ -123,17 +108,11 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/cmake/Modules/*
 %{_libdir}/libqutim*.so
 
-%files -n jreen
-%defattr(-,root,root)
-%{_libdir}/libjreen.so.*
-
-%files -n jreen-devel
-%defattr(-,root,root)
-%{_includedir}/jreen
-%{_libdir}/pkgconfig/libjreen.pc
-%{_libdir}/libjreen.so
 
 %changelog
+* Fri Jun 20 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-2.R
+- Drop jreen* subpackage
+
 * Wed Jun 18 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-1.R
 - Added README.RFRemix file
 
