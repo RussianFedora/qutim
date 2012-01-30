@@ -110,7 +110,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
-* Thu Jun 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130git5382cfd-1.R
+* Thu Jun 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
 - Update to last revision.
 - Fixed duplication of backslashes in messages
 
