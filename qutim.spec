@@ -1,5 +1,5 @@
-%global date 20120113
-%global gitcommit 6a8a205
+%global date 20120130
+%global gitcommit 5382cfd
 %global realver 0.3
 
 Name:           qutim
@@ -110,6 +110,10 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Jun 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130git5382cfd-1.R
+- Update to last revision.
+- Fixed duplication of backslashes in messages
+
 * Fri Jun 20 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-2.R
 - Drop jreen* subpackage
 
