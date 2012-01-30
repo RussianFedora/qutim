@@ -1,5 +1,5 @@
 %global date 20120130
-%global gitcommit 5382cfd
+%global gitcommit b375382
 %global realver 0.3
 
 Name:           qutim
