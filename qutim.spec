@@ -1,10 +1,10 @@
-%global date 20120130
-%global gitcommit b375382
+%global date 20120326
+%global gitcommit ed0e703
 %global realver 0.3
 
 Name:           qutim
 Version:        %{realver}.%{date}git%{gitcommit}
-Release:        2%{dist}.R
+Release:        1%{dist}
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
@@ -110,6 +110,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120326gited0e703-1.R
+- Update to last revision
+
 * Thu Jun 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
 - Update to last revision.
 - Fixed duplication of backslashes in messages
