@@ -113,21 +113,21 @@ make install DESTDIR=$RPM_BUILD_ROOT
 * Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120326gited0e703-1.R
 - Update to last revision
 
-* Thu Jun 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
+* Thu Jan 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
 - Update to last revision.
 - Fixed duplication of backslashes in messages
 
-* Fri Jun 20 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-2.R
+* Fri Jan 20 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-2.R
 - Drop jreen* subpackage
 
-* Wed Jun 18 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-1.R
+* Wed Jan 18 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111114git7943460-1.R
 - Added README.RFRemix file
 
-* Thu Jun 18 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
+* Thu Jan 18 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
 - Update to last revision.
 - Add new files
 
-* Thu Jun 13 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
+* Thu Jan 13 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120113git6a8a205-1.R
 - Update to last revision.
 
 * Thu Dec 13 2011 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20111213gitf50a28a-1.R
