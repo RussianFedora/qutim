@@ -1,5 +1,5 @@
-%global date 20120326
-%global gitcommit ed0e703
+%global date 20120329
+%global gitcommit e677d0e
 %global realver 0.3
 
 Name:           qutim
@@ -31,7 +31,7 @@ BuildRequires:  telepathy-qt4-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  dbusmenu-qt-devel
 BuildRequires:  qt-mobility-devel
-BuildRequires:  jreen-devel
+BuildRequires:  jreen-devel >= 1.0.4
 
 Requires:       qca-cyrus-sasl
 
@@ -56,6 +56,7 @@ Development files for qutIM
 
 %package        doc
 Summary:        Documentation files for qutIM
+Requires:       %{name} = %{version}
 BuildArch:      noarch
 
 %description    doc
@@ -67,7 +68,7 @@ Documentation files for qutIM
 
 
 %build
-%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true .
+%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true -DSYSTEM_IDN=true .
 make %{?_smp_mflags}
 cp %{SOURCE100} .
 
@@ -110,7 +111,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
-* Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120326gited0e703-1.R
+* Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120329gite677d0e-1.R
 - Update to last revision
 
 * Thu Jan 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
