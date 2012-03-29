@@ -27,7 +27,7 @@ BuildRequires:  libpurple-devel
 BuildRequires:  doxygen
 BuildRequires:  libXScrnSaver-devel
 BuildRequires:  phonon-devel
-BuildRequires:  telepathy-qt4-devel
+#BuildRequires:  telepathy-qt4-devel
 BuildRequires:  SDL_mixer-devel
 BuildRequires:  dbusmenu-qt-devel
 BuildRequires:  qt-mobility-devel
@@ -68,7 +68,7 @@ Documentation files for qutIM
 
 
 %build
-%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true -DSYSTEM_IDN=true .
+%{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true -DSYSTEM_IDN=true -DASTRAL=off .
 make %{?_smp_mflags}
 cp %{SOURCE100} .
 
@@ -113,6 +113,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %changelog
 * Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120329gite677d0e-1.R
 - Update to last revision
+- Turn off telepathy
 
 * Thu Jan 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
 - Update to last revision.
