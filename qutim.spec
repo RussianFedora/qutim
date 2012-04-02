@@ -12,7 +12,7 @@ Summary(ru):    Мультиплатформенный, мультипроток
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
 #Source0:        %{name}-%{realver}.git.tar.xz
-Source0:        http://qutim.org/dwnl/34/qutim-0.3.0.tar.bz2
+Source0:        http://qutim.org/dwnl/34/%{name}-%{version}.tar.bz2
 Source100:      README.RFRemix
 
 BuildRoot:      /{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -94,6 +94,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/icons/hicolor/*x*/places/user-identity.png
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
 #%{_datadir}/icons/oxygen/scalable/status/*%{name}*.svg
+%{_datadir}/icons/hicolor/scalable/status/*
 %{_datadir}/icons/ubuntu-mono-dark/scalable/status/*%{name}*.svg
 %{_datadir}/icons/ubuntu-mono-light/scalable/status/*%{name}*.svg
 %{_datadir}/pixmaps/%{name}.xpm
