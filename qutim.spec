@@ -3,14 +3,16 @@
 %global realver 0.3
 
 Name:           qutim
-Version:        %{realver}.%{date}git%{gitcommit}
+#Version:        %{realver}.%{date}git%{gitcommit}
+Version:        0.3.0
 Release:        1%{dist}
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
-Source0:        %{name}-%{realver}.git.tar.xz
+#Source0:        %{name}-%{realver}.git.tar.xz
+Source0:        http://qutim.org/dwnl/34/qutim-0.3.0.tar.bz2
 Source100:      README.RFRemix
 
 BuildRoot:      /{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -64,7 +66,7 @@ Documentation files for qutIM
 
 
 %prep
-%setup -q -n %{name}-%{realver}.git
+%setup -q
 
 
 %build
@@ -91,7 +93,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{_datadir}/icons/hicolor/*x*/apps/%{name}.png
 %{_datadir}/icons/hicolor/*x*/places/user-identity.png
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
-%{_datadir}/icons/oxygen/scalable/status/*%{name}*.svg
+#%{_datadir}/icons/oxygen/scalable/status/*%{name}*.svg
 %{_datadir}/icons/ubuntu-mono-dark/scalable/status/*%{name}*.svg
 %{_datadir}/icons/ubuntu-mono-light/scalable/status/*%{name}*.svg
 %{_datadir}/pixmaps/%{name}.xpm
@@ -111,8 +113,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
-* Mon Mar 26 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.20120329gite677d0e-1.R
-- Update to last revision
+* Mon Apr 02 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.0-1.R
+- Update to release 0.3.0
 - Turn off telepathy
 
 * Thu Jan 30 2012 Vladimir V. Lopatin <skyb.calista@gmail.com> 0.3.20120130gitb375382-1.R
