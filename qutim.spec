@@ -5,7 +5,8 @@
 Name:           qutim
 #Version:        %{realver}.%{date}git%{gitcommit}
 Version:        0.3.0
-Release:        1%{dist}
+Release:        2%{dist}
+Epoch:          1
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
 
@@ -114,6 +115,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Apr  4 2012 Arkady L. Shane <ashejn@russianfedora.ru> 0.3.0-2.R
+- bump epoch
+
 * Mon Apr 02 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.0-1.R
 - Update to release 0.3.0
 - Turn off telepathy
