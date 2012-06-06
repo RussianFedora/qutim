@@ -4,8 +4,8 @@
 
 Name:           qutim
 #Version:        %{realver}.%{date}git%{gitcommit}
-Version:        0.3.0
-Release:        2%{dist}
+Version:        0.3.1
+Release:        1%{dist}
 Epoch:          1
 Summary:        Multiprotocol (ICQ, Jabber, IRC etc) instant messenger with modern Qt4 interface
 Summary(ru):    Мультиплатформенный, мультипротокольный (ICQ, Jabber, IRC...) мессенджер на QT4
@@ -13,8 +13,7 @@ Summary(ru):    Мультиплатформенный, мультипроток
 License:        GPLv2+ and CC-BY-SA
 URL:            http://www.qutim.org/
 #Source0:        %{name}-%{realver}.git.tar.xz
-Source0:        http://qutim.org/dwnl/34/%{name}-%{version}.tar.bz2
-Source100:      README.RFRemix
+Source0:        http://qutim.org/dwnl/40/%{name}-%{version}.tar.bz2
 
 BuildRoot:      /{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -73,7 +72,6 @@ Documentation files for qutIM
 %build
 %{cmake} -DCMAKE_SKIP_RPATH:BOOL=ON -DSYSTEM_JREEN=true -DSYSTEM_IDN=true -DASTRAL=off .
 make %{?_smp_mflags}
-cp %{SOURCE100} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -105,7 +103,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %files doc
 %defattr(-,root,root)
 %doc %{_datadir}/%{name}/doc
-%doc README.RFRemix
 
 %files devel
 %defattr(-,root,root)
@@ -115,6 +112,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Jun 06 2012 Vasiliy N. Glazov <vascom2@gmail.com> 0.3.1-1.R
+- Update to release 0.3.1
+
 * Thu Apr  4 2012 Arkady L. Shane <ashejn@russianfedora.ru> 0.3.0-2.R
 - bump epoch
 
